@@ -1,5 +1,9 @@
 # readme-shields-sync
 
+## 1.2.1 - 2025-10-14
+
+- Changed: delete NPM_TOKEN ([#21](https://github.com/sw1tch3roo/readme-shields-sync/pull/21)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
+
 ## 1.2.0 - 2025-10-14
 
 - Added: pushing tags to create new release ([#19](https://github.com/sw1tch3roo/readme-shields-sync/pull/19)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).

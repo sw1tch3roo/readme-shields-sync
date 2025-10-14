@@ -3,7 +3,7 @@
     "changelog": [
         "./changelog-readme-shields-sync.cjs",
         {
-            "repo": "readme-shields-sync/readme-shields-sync"
+            "repo": "sw1tch3roo/readme-shields-sync"
         }
     ],
     "commit": false,

@@ -45,6 +45,7 @@ const entries = [];
 let latestVersion = undefined;
 let stoppedIndex = -1;
 let subHeader = false;
+let flushed = false;
 
 // Get today's date in YYYY-MM-DD format
 const today = new Date().toISOString().split('T')[0];
@@ -58,9 +59,14 @@ for (const line of currentLines) {
             newLines.push(`## ${latestVersion} - ${today}`);
             continue;
         } else {
-            entries.sort(byPrefixOrder);
-            newLines.push('', ...entries, '');
+            if (entries.length) {
+                entries.sort(byPrefixOrder);
+                newLines.push('', ...entries, '');
+                entries.length = 0;
+            }
+
             newLines.push(...currentLines.slice(stoppedIndex));
+            flushed = true;
             break;
         }
     }
@@ -85,14 +91,15 @@ for (const line of currentLines) {
     newLines.push(line);
 }
 
-if (entries.length) {
+if (!flushed && entries.length) {
     entries.sort(byPrefixOrder);
 
     if (newLines.length && newLines[newLines.length - 1] !== '') {
         newLines.push('');
     }
 
-    newLines.push(...entries, '');
+    newLines.push(...entries);
+    newLines.push('');
 }
 
 writeFileSync(path, newLines.join('\n'), 'utf8');

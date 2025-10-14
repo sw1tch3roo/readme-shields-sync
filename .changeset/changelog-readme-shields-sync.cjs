@@ -99,6 +99,9 @@ const changelogFunctions = {
 
         return line ? `- ${line}.` : '';
     },
+    async getDependencyReleaseLine() {
+        return '';
+    },
 };
 
 module.exports = changelogFunctions;

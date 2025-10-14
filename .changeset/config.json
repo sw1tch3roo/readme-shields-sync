@@ -1,0 +1,15 @@
+{
+    "$schema": "https://unpkg.com/@changesets/config/schema.json",
+    "changelog": [
+        "./changelog-readme-shields-sync.cjs",
+        {
+            "repo": "readme-shields-sync/readme-shields-sync"
+        }
+    ],
+    "commit": false,
+    "linked": [],
+    "access": "public",
+    "baseBranch": "main",
+    "updateInternalDependencies": "patch",
+    "ignore": []
+}

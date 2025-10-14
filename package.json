@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "fix:js": "eslint . --fix",
     "fix": "npm run fix:js && npm run format",
-    "prepare": "husky"
+    "prepare": "husky",
+    "changeset": "changeset version && node .changeset/rewrite-changelog.mjs CHANGELOG.md && git restore package.json"
   },
   "description": "Auto-insert and keep Shields.io badges in README.md across ecosystems (Javascript, TypeScript, Python, Rust, Go).",
   "license": "MIT",
@@ -43,13 +44,15 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@changesets/get-github-info": "^0.6.0",
+    "@types/node": "^24.7.2",
+    "@eslint/js": "^9.13.0",
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "lint-staged": "^16.2.4",
     "typescript": "^5.9.3",
-    "@types/node": "^24.7.2",
     "eslint": "^9.13.0",
-    "@eslint/js": "^9.13.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-import-resolver-typescript": "^3.6.1"
   },

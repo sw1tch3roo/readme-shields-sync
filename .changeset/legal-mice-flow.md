@@ -2,4 +2,4 @@
 "readme-shields-sync": minor
 ---
 
-Added changeset
+Added: changeset

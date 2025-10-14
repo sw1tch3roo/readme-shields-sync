@@ -1,0 +1,18 @@
+{
+    "include": [
+        "npm",
+        "downloads",
+        "license",
+        "ci",
+        "stars",
+        "coverage",
+        "bundle",
+        "deps",
+        "node",
+        "types",
+        "pypi",
+        "crates",
+        "go"
+    ],
+    "exclude": []
+}

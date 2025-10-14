@@ -1,0 +1,60 @@
+{
+  "name": "readme-shields-sync",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "readme-shields-sync": "bin/readme-shields-sync.mjs"
+  },
+  "scripts": {
+    "format": "prettier . --write --cache",
+    "typecheck": "tsc --pretty",
+    "lint": "eslint .",
+    "fix:js": "eslint . --fix",
+    "fix": "npm run fix:js && npm run format",
+    "prepare": "husky"
+  },
+  "description": "Auto-insert and keep Shields.io badges in README.md across ecosystems (Javascript, TypeScript, Python, Rust, Go).",
+  "license": "MIT",
+  "author": "sw1tch3roo",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "readme",
+    "badges",
+    "shields",
+    "docs",
+    "cli",
+    "github",
+    "npm",
+    "pypi",
+    "rust",
+    "go",
+    "coverage",
+    "bundle"
+  ],
+  "homepage": "https://github.com/sw1tch3roo/readme-shields-sync",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sw1tch3roo/readme-shields-sync.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sw1tch3roo/readme-shields-sync/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "lint-staged": "^16.2.4",
+    "typescript": "^5.9.3",
+    "@types/node": "^24.7.2",
+    "eslint": "^9.13.0",
+    "@eslint/js": "^9.13.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-import-resolver-typescript": "^3.6.1"
+  },
+  "lint-staged": {
+    "*.{js,mjs}": "eslint --cache --fix",
+    "*.{js,json,md,mjs,ts,yml}": "prettier --write"
+  }
+}

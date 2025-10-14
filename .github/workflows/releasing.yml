@@ -14,7 +14,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
     release:
-        if: github.repository == 'readme-shields-sync/readme-shields-sync' # Workaround. See https://github.com/changesets/action/issues/4
+        if: github.repository == 'sw1tch3roo/readme-shields-sync' # Workaround. See https://github.com/changesets/action/issues/4
         name: Release
         runs-on: ubuntu-latest
         timeout-minutes: 20

@@ -1,5 +1,9 @@
 # readme-shields-sync
 
+## 1.0.0 - 2025-10-14
+
+- Fixed: readme-shields-sync config filename ([#15](https://github.com/sw1tch3roo/readme-shields-sync/pull/15)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
+
 ## 0.4.0 - 2025-10-14
 
 - Changed: delete git restore in changeset ([#13](https://github.com/sw1tch3roo/readme-shields-sync/pull/13)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).

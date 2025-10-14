@@ -2,6 +2,11 @@
 
 ## 0.2.0 - 2025-10-14
 
+- Added: dependabot ([#7](https://github.com/sw1tch3roo/readme-shields-sync/pull/7)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
+- Fixed: condition in rewrite-changelog.mjs ([#12](https://github.com/sw1tch3roo/readme-shields-sync/pull/12)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
+
+## 0.2.0 - 2025-10-14
+
 - Changed: prefixes in changeset md files ([#2](https://github.com/sw1tch3roo/readme-shields-sync/pull/2)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
 - Added: changeset ([@sw1tch3roo](https://github.com/sw1tch3roo)).
 - Added: vitest ([#1](https://github.com/sw1tch3roo/readme-shields-sync/pull/1)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).

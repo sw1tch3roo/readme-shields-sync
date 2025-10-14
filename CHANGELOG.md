@@ -1,5 +1,9 @@
 # readme-shields-sync
 
+## 1.2.0 - 2025-10-14
+
+- Added: pushing tags to create new release ([#19](https://github.com/sw1tch3roo/readme-shields-sync/pull/19)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
+
 ## 1.1.0 - 2025-10-14
 
 - Added: new autopublish workflow ([#17](https://github.com/sw1tch3roo/readme-shields-sync/pull/17)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).

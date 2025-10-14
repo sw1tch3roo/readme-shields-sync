@@ -1,0 +1,30 @@
+version: 2
+updates:
+    - package-ecosystem: npm
+      directory: '/'
+      schedule:
+          interval: weekly
+      open-pull-requests-limit: 5
+      labels:
+          - 'pr: dependencies'
+      versioning-strategy: increase
+      groups:
+          changesets:
+              patterns: ['@changesets/*']
+          eslint:
+              patterns: ['eslint', 'eslint-*']
+          vitest:
+              patterns: ['vitest', 'vitest-*']
+          typescript:
+              patterns: ['typescript', '@types/*']
+      ignore:
+          - dependency-name: 'eslint'
+            update-types: ['version-update:semver-major']
+
+    - package-ecosystem: github-actions
+      directory: '/'
+      schedule:
+          interval: weekly
+      open-pull-requests-limit: 5
+      labels:
+          - 'pr: dependencies'

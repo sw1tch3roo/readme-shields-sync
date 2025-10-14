@@ -26,7 +26,10 @@ jobs:
                   registry-url: https://registry.npmjs.org
                   cache: 'npm'
 
-            - name: Install
+            - name: Update npm CLI
+              run: npm install -g npm@latest
+
+            - name: Install dependencies
               run: npm ci
 
             - name: Test

@@ -85,5 +85,15 @@ for (const line of currentLines) {
     newLines.push(line);
 }
 
+if (entries.length) {
+    entries.sort(byPrefixOrder);
+
+    if (newLines.length && newLines[newLines.length - 1] !== '') {
+        newLines.push('');
+    }
+
+    newLines.push(...entries, '');
+}
+
 writeFileSync(path, newLines.join('\n'), 'utf8');
 console.log(`"${path}" rewritten.`); // eslint-disable-line no-console

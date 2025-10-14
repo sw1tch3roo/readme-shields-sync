@@ -1,5 +1,9 @@
 # readme-shields-sync
 
+## 1.2.2 - 2025-10-14
+
+- Added: new step in release.yml to update npm cli ([#23](https://github.com/sw1tch3roo/readme-shields-sync/pull/23)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
+
 ## 1.2.1 - 2025-10-14
 
 - Changed: delete NPM_TOKEN ([#21](https://github.com/sw1tch3roo/readme-shields-sync/pull/21)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).

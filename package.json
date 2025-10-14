@@ -13,6 +13,7 @@
     "fix": "npm run fix:js && npm run format",
     "prepare": "husky",
     "changeset": "changeset version && node .changeset/rewrite-changelog.mjs CHANGELOG.md",
+    "release": "changeset publish",
     "test": "vitest run",
     "test:watch": "vitest"
   },

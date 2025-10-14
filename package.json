@@ -1,6 +1,6 @@
 {
   "name": "readme-shields-sync",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "type": "module",
   "bin": {
     "readme-shields-sync": "bin/readme-shields-sync.mjs"
@@ -12,7 +12,7 @@
     "fix:js": "eslint . --fix",
     "fix": "npm run fix:js && npm run format",
     "prepare": "husky",
-    "changeset": "changeset version && node .changeset/rewrite-changelog.mjs CHANGELOG.md && git restore package.json",
+    "changeset": "changeset version && node .changeset/rewrite-changelog.mjs CHANGELOG.md",
     "test": "vitest run",
     "test:watch": "vitest"
   },

@@ -1,6 +1,6 @@
 # readme-shields-sync
 
-## 0.2.0 - 2025-10-14
+## 0.3.0 - 2025-10-14
 
 - Added: dependabot ([#7](https://github.com/sw1tch3roo/readme-shields-sync/pull/7)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
 - Fixed: condition in rewrite-changelog.mjs ([#12](https://github.com/sw1tch3roo/readme-shields-sync/pull/12)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).

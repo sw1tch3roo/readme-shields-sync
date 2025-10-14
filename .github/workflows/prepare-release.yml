@@ -1,0 +1,47 @@
+name: Prepare Release
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    pull-requests: write
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    prepare-release:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: 'npm'
+
+            - name: Install
+              run: npm ci
+
+            - name: Get next version
+              id: status
+              run: |
+                  npx changeset status --output .changeset/status.json
+                  next=$(jq -r '.releases[0].newVersion // ""' < .changeset/status.json)
+                  rm -f .changeset/status.json
+                  echo "next=${next}" >> "$GITHUB_OUTPUT"
+
+            - name: Create release pull request
+              if: ${{ steps.status.outputs.next != '' }}
+              uses: changesets/action@v1
+              with:
+                  commit: Prepare ${{ steps.status.outputs.next }}
+                  title: Prepare ${{ steps.status.outputs.next }}
+                  version: npm run changeset
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

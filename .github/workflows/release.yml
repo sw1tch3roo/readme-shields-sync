@@ -1,0 +1,48 @@
+name: Release
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    pull-requests: write
+    id-token: write
+
+jobs:
+    release:
+        if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'Prepare ')
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  registry-url: https://registry.npmjs.org
+                  cache: 'npm'
+
+            - name: Install
+              run: npm ci
+
+            - name: Test
+              if: ${{ hashFiles('**/vitest.config.*', '**/jest.config.*') != '' }}
+              run: |
+                  if [ -f package.json ]; then
+                    if npm run | grep -q " test"; then npm test; fi
+                  fi
+
+            - name: Create release PR or publish to npm
+              id: changesets
+              uses: changesets/action@v1
+              with:
+                  publish: npm run release
+                  createGithubReleases: true
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_CONFIG_PROVENANCE: true

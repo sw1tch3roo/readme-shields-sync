@@ -1,5 +1,9 @@
 # readme-shields-sync
 
+## 0.4.0 - 2025-10-14
+
+- Changed: delete git restore in changeset ([#13](https://github.com/sw1tch3roo/readme-shields-sync/pull/13)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
+
 ## 0.3.0 - 2025-10-14
 
 - Added: dependabot ([#7](https://github.com/sw1tch3roo/readme-shields-sync/pull/7)) ([@sw1tch3roo](https://github.com/sw1tch3roo)).
